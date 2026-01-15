@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  font-family: "Georgia", "Trebuchet MS", serif;
+}
+
+body {
+  background: #5b4636;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  min-height: 100vh;
+}
+
+.container {
+  width: 420px;
+  background: #3e2f23;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+}
+
+h1 {
+  text-align: center;
+  color: #f4e4c1;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* FORM */
+
+form {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  background: #f4e4c1;
+  border: 2px solid #8b6b45;
+}
+
+button {
+  padding: 8px 14px;
+  background: #8b6b45;
+  color: #fff;
+  border: 2px solid #6f5334;
+  cursor: pointer;
+}
+
+/* FILTERS */
+
+.filters {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.filters button {
+  flex: 1;
+  background: #6f5334;
+  color: #f4e4c1;
+  border: 2px solid #4e3a24;
+  padding: 6px;
+  text-transform: uppercase;
+}
+
+.filters button.active {
+  background: #b08a5a;
+  color: #2a1c10;
+}
+
+/* POSTER BASE */
+
+#poster {
+  position: relative;
+  padding: 20px;
+  background: #e8d3a4;
+  border: 3px solid #8b6b45;
+  box-shadow: inset 0 0 25px rgba(0,0,0,0.3);
+  overflow: hidden;
+
+  /* Burnt edges */
+  -webkit-mask-image: radial-gradient(circle at 10% 10%, transparent 0 12px, black 14px),
+                       radial-gradient(circle at 90% 90%, transparent 0 12px, black 14px),
+                       linear-gradient(black, black);
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+}
+
+/* Ambient dust */
+#poster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Poster title */
+
+#poster-title {
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Poster variants */
+
+.poster-all #poster-title {
+  content: "WANTED";
+}
+
+.poster-active {
+  background: #f5e6c8;
+  border-style: dashed;
+}
+
+.poster-completed {
+  background: #d2c3a1;
+  filter: sepia(0.7);
+}
+
+/* Paper tear effect for completed */
+.poster-completed::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #000 0 10px,
+    transparent 10px 20px
+  );
+  opacity: 0.15;
+}
+
+/* LIST */
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* NOTES */
+
+li {
+  background: #f4e4c1;
+  color: #3a2a1a;
+  padding: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 2px solid #b08a5a;
+  box-shadow: 0 6px 0 #7a5c3a, 2px 8px 15px rgba(0,0,0,0.5);
+  transform: rotate(var(--rotate));
+}
+
+li.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+li span {
+  cursor: pointer;
+  flex: 1;
+  margin-right: 10px;
+}
+
+li button {
+  background: #a94442;
+  border: 2px solid #6d2d2b;
+  color: white;
+  padding: 4px 8px;
+}

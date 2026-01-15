@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cowboy Todo Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Wanted: Tasks</h1>
+
+    <form id="todo-form">
+      <input
+        type="text"
+        id="todo-input"
+        placeholder="Write yer task..."
+        required
+      />
+      <button type="submit">Pin</button>
+    </form>
+
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="completed">Completed</button>
+    </div>
+
+    <!-- Poster -->
+    <div id="poster">
+      <div id="poster-title">WANTED</div>
+      <ul id="todo-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
