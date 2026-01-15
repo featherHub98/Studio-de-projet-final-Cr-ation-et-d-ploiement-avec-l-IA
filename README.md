@@ -1,5 +1,7 @@
 # 🤠 Cowboy Todo Board
 
+Link to github page : https://featherhub98.github.io/Studio-de-projet-final-Cr-ation-et-d-ploiement-avec-l-IA/
+
 A pure **HTML, CSS, and JavaScript** Todo List web application with a **Western / Wanted Poster aesthetic**.
 
 Tasks are displayed as pinned notes on dynamically changing posters:
